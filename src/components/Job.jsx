@@ -1,10 +1,11 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { VscSave } from "react-icons/vsc";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.companies);
 
   return (
     <Row
@@ -16,7 +17,9 @@ const Job = ({ data }) => {
     >
       <Col xs={1} className="d-flex align-items-center pl-0">
         <Button
-          className="d-flex align-items-center savebuttons"
+          className={`d-flex align-items-center ${
+            favorites.includes(data) === true ? `saved` : `savebuttons`
+          }`}
           onClick={() => {
             dispatch({ type: "ADD_TO_FAV", payload: data });
           }}

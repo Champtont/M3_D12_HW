@@ -55,6 +55,29 @@
   border: none;
   color: blue;
 }
+.savedbuttons:active {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+.savedbuttons:visited {
+  background-color: transparent;
+}
+
+.saved {
+  background-color: transparent;
+  border: none;
+  color: crimson;
+}
+
+.saved:hover {
+  background-color: transparent;
+  border: none;
+  color: blue;
+}
+.saved:visited {
+  background-color: transparent;
+}
 
 .mylist-item:hover {
   box-shadow: #282c34 0px 6px 10px;

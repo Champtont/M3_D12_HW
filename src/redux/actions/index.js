@@ -19,8 +19,7 @@ export const removeFromFavAction = (favorite) => {
 };
 
 export const getJobsAction = (query) => {
-  const baseEndpoint =
-    "https://strive-benchmark.herokuapp.com/api/jobs?search=";
+  const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search";
 
   return async (dispatch, getState) => {
     console.log("currently fetching jobs...");
@@ -34,12 +33,31 @@ export const getJobsAction = (query) => {
           type: GET_JOBS,
           payload: data,
         });
+        dispatch({
+          type: GET_JOBS_LOADING,
+          payload: false,
+        });
         console.log(getState());
       } else {
-        alert("Error fetching results");
+        dispatch({
+          type: GET_JOBS_ERROR,
+          payload: true,
+        });
+        dispatch({
+          type: GET_JOBS_LOADING,
+          payload: false,
+        });
       }
     } catch (error) {
       console.log(error);
+      dispatch({
+        type: GET_JOBS_ERROR,
+        payload: true,
+      });
+      dispatch({
+        type: GET_JOBS_LOADING,
+        payload: false,
+      });
     }
   };
 };

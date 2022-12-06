@@ -8,8 +8,11 @@ const Job = ({ data }) => {
 
   return (
     <Row
-      className="mx-0 mt-3 py-3 px-0 align-items-center"
-      style={{ border: "1px solid antiquewhite", borderRadius: 15 }}
+      className="mx-0 mt-3 py-3 px-0 align-items-center mylist-item"
+      style={{
+        borderRadius: 15,
+        backgroundColor: "antiquewhite",
+      }}
     >
       <Col xs={1} className="d-flex align-items-center pl-0">
         <Button

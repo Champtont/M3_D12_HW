@@ -2,6 +2,8 @@ export const ADD_TO_FAV = "ADD_TO_FAV";
 export const REMOVE_FROM_FAV = "REMOVE_FROM_FAV";
 export const GET_JOBS = "GET_JOBS";
 export const SET_QUERY = "SET_QUERY";
+export const GET_JOBS_LOADING = "GET_JOBS_LOADING";
+export const GET_JOBS_ERROR = "GET_JOBS_ERROR";
 
 export const addToFavAction = (data) => {
   return {
